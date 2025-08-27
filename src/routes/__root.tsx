@@ -1,12 +1,10 @@
-import * as React from "react";
-import {Outlet, Link, createRootRoute} from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
+import { Switch } from '@/components/ui/switch';
+import { useTheme } from '@/lib/theme/ThemeProvider';
 
-import {Switch} from '@/components/ui/switch';
-import {useTheme} from '@/lib/theme/ThemeProvider';
-
-export const rootRoute = createRootRoute({
+export const Route = createRootRoute({
   component: () => {
-    const {theme, toggleTheme} = useTheme();
+    const { theme, toggleTheme } = useTheme();
 
     return (
       <div className="h-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">

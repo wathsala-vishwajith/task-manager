@@ -21,7 +21,8 @@ export function Tasks() {
             className="p-4 border rounded shadow-sm hover:shadow-md transition-shadow"
           >
             <Link
-              to={`/tasks/${task.id}`}
+              to="/tasks/$taskId"
+                params={{ taskId: task.id }}
               className="text-lg font-medium text-blue-600 hover:underline"
             >
               {task.title}
@@ -34,8 +35,7 @@ export function Tasks() {
   );
 }
 
-// ✅ Need to pass the file route path here
-export const Route = createFileRoute()({
+export const Route = createFileRoute("/tasks/")({
   component: Tasks,
 });
 

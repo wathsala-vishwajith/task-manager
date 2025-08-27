@@ -1,9 +1,8 @@
 import { createRouter } from "@tanstack/react-router"
-
-import { rootRoute } from "./routes/root";
+import { routeTree } from "./routeTree.gen"
 
 export const router = createRouter({
-  routeTree: rootRoute,
+  routeTree: routeTree,
 })
 
 // TypeScript helper (so hooks like useRouter work properly)
